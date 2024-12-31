@@ -56,9 +56,9 @@ ___
 
 Объяснение кода:
 
-    Установка инструментов: Функция install_avlm() отвечает за установку необходимых инструментов, таких как dotnet-dump. В данном случае используется pip для установки пакета.
-    Создание дампа: Функция create_memory_dump(pid) принимает идентификатор процесса (PID) и выполняет команду для создания дампа памяти. В примере используется команда dotnet-dump collect -p {pid}.
-    Основная функция: В функции main() вызываются функции установки и создания дампа, а также запрашивается PID у пользователя.
+Установка инструментов: Функция install_avlm() отвечает за установку необходимых инструментов, таких как dotnet-dump. В данном случае используется pip для установки пакета.
+Создание дампа: Функция create_memory_dump(pid) принимает идентификатор процесса (PID) и выполняет команду для создания дампа памяти. В примере используется команда dotnet-dump collect -p {pid}.
+Основная функция: В функции main() вызываются функции установки и создания дампа, а также запрашивается PID у пользователя.
 
 Запуск скрипта:
 Для запуска скрипта сохраните его в файл, например memory_dump.py, и выполните команду в терминале:
@@ -69,52 +69,52 @@ ___
 ___
 
 б) Volatility
-python:
-
-import subprocess
-import sys
-import tkinter as tk
-from tkinter import messagebox
-
-def run_command(command):
-    """Запускает команду в терминале и возвращает результат."""
-    try:
-        result = subprocess.run(command, shell=True, check=True, text=True, capture_output=True)
-        return result.stdout
-    except subprocess.CalledProcessError as e:
-        return e.stderr
-
-def install_volatility():
-    """Устанавливает Volatility и его зависимости."""
-    commands = [
-        "sudo apt update && sudo apt upgrade -y",
-        "sudo apt install git python2.7 python3-pip python-setuptools build-essential python-dev-is-python2 -y",
-        "sudo pip install distorm3==3.4.4",
-        "git clone https://github.com/volatilityfoundation/volatility.git",
-        "chmod +x volatility/vol.py",
-        "sudo mv volatility /opt/volatility",
-        "sudo ln -s /opt/volatility/vol.py /usr/bin/vol.py",
-        "vol.py --info"
-    ]
-    
-    for command in commands:
-        output = run_command(command)
-        print(f"Команда: {command}\nРезультат:\n{output}\n")
-
-def on_install():
-    """Обработчик нажатия кнопки установки."""
-    install_volatility()
-    messagebox.showinfo("Установка завершена", "Volatility успешно установлен!")
-
-# Создание графического интерфейса
-root = tk.Tk()
-root.title("Установка Volatility")
-
-install_button = tk.Button(root, text="Установить Volatility", command=on_install)
-install_button.pack(pady=20)
-
-root.mainloop()
-
+	# python:
+	
+	import subprocess
+	import sys
+	import tkinter as tk
+	from tkinter import messagebox
+	
+	def run_command(command):
+	    """Запускает команду в терминале и возвращает результат."""
+	    try:
+	        result = subprocess.run(command, shell=True, check=True, text=True, capture_output=True)
+	        return result.stdout
+	    except subprocess.CalledProcessError as e:
+	        return e.stderr
+	
+	def install_volatility():
+	    """Устанавливает Volatility и его зависимости."""
+	    commands = [
+	        "sudo apt update && sudo apt upgrade -y",
+	        "sudo apt install git python2.7 python3-pip python-setuptools build-essential python-dev-is-python2 -y",
+	        "sudo pip install distorm3==3.4.4",
+	        "git clone https://github.com/volatilityfoundation/volatility.git",
+	        "chmod +x volatility/vol.py",
+	        "sudo mv volatility /opt/volatility",
+	        "sudo ln -s /opt/volatility/vol.py /usr/bin/vol.py",
+	        "vol.py --info"
+	    ]
+	    
+	    for command in commands:
+	        output = run_command(command)
+	        print(f"Команда: {command}\nРезультат:\n{output}\n")
+	
+	def on_install():
+	    """Обработчик нажатия кнопки установки."""
+	    install_volatility()
+	    messagebox.showinfo("Установка завершена", "Volatility успешно установлен!")
+	
+	# Создание графического интерфейса
+	root = tk.Tk()
+	root.title("Установка Volatility")
+	
+	install_button = tk.Button(root, text="Установить Volatility", command=on_install)
+	install_button.pack(pady=20)
+	
+	root.mainloop()
+	
 
 Объяснение кода:
     Импорт библиотек: Используются библиотеки subprocess для выполнения команд в терминале и tkinter для создания графического интерфейса.
