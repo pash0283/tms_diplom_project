@@ -12,47 +12,46 @@
 ___
 а) AVML
 Для создания Python-скрипта, который будет запускать процесс установки AVLM и создания дампа оперативной памяти, можно использовать следующий код. Этот скрипт будет включать в себя установку необходимых инструментов и выполнение команд для создания дампа.
+	# python:
+	import os
+	import subprocess
+	import sys
 	
-# python:
-import os
-import subprocess
-import sys
-
-def install_avlm():
-    """Устанавливает необходимые инструменты для создания дампа оперативной памяти."""
-    try:
-        print("Установка необходимых инструментов...")
-        # Пример установки dotnet-dump (можно заменить на нужные команды)
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "dotnet-dump"])
-        print("Инструменты успешно установлены.")
-    except subprocess.CalledProcessError as e:
-        print(f"Ошибка установки: {e}")
-        sys.exit(1)
-
-def create_memory_dump(pid):
-    """Создает дамп оперативной памяти для указанного PID."""
-    try:
-        print(f"Создание дампа памяти для процесса с PID: {pid}...")
-        # Команда для создания дампа (замените на вашу команду)
-        command = f"dotnet-dump collect -p {pid}"
-        subprocess.check_call(command, shell=True)
-        print("Дамп памяти успешно создан.")
-    except subprocess.CalledProcessError as e:
-        print(f"Ошибка при создании дампа: {e}")
-        sys.exit(1)
-
-def main():
-    install_avlm()
-    
-    # Запрашиваем PID целевого процесса
-    pid = input("Введите PID процесса для создания дампа: ")
-    
-    create_memory_dump(pid)
-
-if __name__ == "__main__":
-    main()
-
-)
+	def install_avlm():
+	    """Устанавливает необходимые инструменты для создания дампа оперативной памяти."""
+	    try:
+        	print("Установка необходимых инструментов...")
+        	# Пример установки dotnet-dump (можно заменить на нужные команды)
+        	subprocess.check_call([sys.executable, "-m", "pip", "install", "dotnet-dump"])
+        	print("Инструменты успешно установлены.")
+	    except subprocess.CalledProcessError as e:
+        	print(f"Ошибка установки: {e}")
+        	sys.exit(1)
+	
+	def create_memory_dump(pid):
+	    """Создает дамп оперативной памяти для указанного PID."""
+	    try:
+	        print(f"Создание дампа памяти для процесса с PID: {pid}...")
+	        # Команда для создания дампа (замените на вашу команду)
+	        command = f"dotnet-dump collect -p {pid}"
+	        subprocess.check_call(command, shell=True)
+	        print("Дамп памяти успешно создан.")
+	    except subprocess.CalledProcessError as e:
+	        print(f"Ошибка при создании дампа: {e}")
+	        sys.exit(1)
+	
+	def main():
+	    install_avlm()
+	    
+	    # Запрашиваем PID целевого процесса
+	    pid = input("Введите PID процесса для создания дампа: ")
+	    
+	    create_memory_dump(pid)
+	
+	if __name__ == "__main__":
+	    main()
+	
+	
 
 Объяснение кода:
 
