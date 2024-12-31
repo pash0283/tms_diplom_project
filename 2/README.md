@@ -12,7 +12,7 @@
 ___
 а) AVML
 Для создания Python-скрипта, который будет запускать процесс установки AVLM и создания дампа оперативной памяти, можно использовать следующий код. Этот скрипт будет включать в себя установку необходимых инструментов и выполнение команд для создания дампа.
-	# python:
+	python:
  	
 		import os
 		import subprocess
@@ -57,19 +57,23 @@ ___
 Объяснение кода:
 
 Установка инструментов: Функция install_avlm() отвечает за установку необходимых инструментов, таких как dotnet-dump. В данном случае используется pip для установки пакета.
+
 Создание дампа: Функция create_memory_dump(pid) принимает идентификатор процесса (PID) и выполняет команду для создания дампа памяти. В примере используется команда dotnet-dump collect -p {pid}.
+
 Основная функция: В функции main() вызываются функции установки и создания дампа, а также запрашивается PID у пользователя.
 
 Запуск скрипта:
 Для запуска скрипта сохраните его в файл, например memory_dump.py, и выполните команду в терминале:
-	bash:
+
+ 	bash:
 	python memory_dump.py
 
 Скрипт запросит PID процесса и создаст дамп оперативной памяти для указанного процесса. Убедитесь, что у вас есть необходимые права доступа для выполнения этих операций.
 ___
 
-б) Volatility
-	# python:
+б) Volatility,
+
+python:
 	
 	import subprocess
 	import sys
@@ -117,116 +121,138 @@ ___
 	
 
 Объяснение кода:
+
     Импорт библиотек: Используются библиотеки subprocess для выполнения команд в терминале и tkinter для создания графического интерфейса.
+
     Функция run_command: Эта функция принимает команду в виде строки, выполняет её и возвращает результат. Если команда завершается с ошибкой, возвращается сообщение об ошибке.
+ 
     Функция install_volatility: В этой функции перечислены команды для установки Volatility и его зависимостей. Каждая команда выполняется последовательно, а результат выводится в консоль.
+
     Функция on_install: Обработчик нажатия кнопки, который запускает установку Volatility и показывает сообщение о завершении.
+
     Графический интерфейс: Создается простое окно с кнопкой для начала установки.
+
 Этот скрипт предоставляет пользователю информативный интерфейс для установки фреймворка Volatility, выводя результаты выполнения команд в консоль.
 ___
 
 в) dwarf2json
 python:
-
-import subprocess
-import sys
-from rich.console import Console
-from rich.progress import Progress
-
-console = Console()
-
-def install_dmarf2json():
-    console.print("[bold green]Starting installation of dmarf2json...[/bold green]")
-    
-    # Установка dmarf2json с помощью pip
-    try:
-        with Progress() as progress:
-            task = progress.add_task("[cyan]Installing dmarf2json...", total=None)
-            subprocess.check_call([sys.executable, "-m", "pip", "install", "dmarf2json"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            progress.update(task, advance=1)
-            console.print("[bold green]Installation completed successfully![/bold green]")
-    except subprocess.CalledProcessError as e:
-        console.print(f"[bold red]Error during installation:[/bold red] {e.stderr.decode().strip()}")
-
-def main():
-    console.print("[bold blue]Welcome to the dmarf2json installer![/bold blue]")
-    console.print("[yellow]This script will install dmarf2json, a tool for creating a symbol table for custom Linux kernels.[/yellow]")
-    install_dmarf2json()
-
-if __name__ == "__main__":
-    main()
-
-
+	
+	import subprocess
+	import sys
+	from rich.console import Console
+	from rich.progress import Progress
+	
+	console = Console()
+	
+	def install_dmarf2json():
+	    console.print("[bold green]Starting installation of dmarf2json...[/bold green]")
+	    
+	    # Установка dmarf2json с помощью pip
+	    try:
+	        with Progress() as progress:
+	            task = progress.add_task("[cyan]Installing dmarf2json...", total=None)
+	            subprocess.check_call([sys.executable, "-m", "pip", "install", "dmarf2json"], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+	            progress.update(task, advance=1)
+	            console.print("[bold green]Installation completed successfully![/bold green]")
+	    except subprocess.CalledProcessError as e:
+	        console.print(f"[bold red]Error during installation:[/bold red] {e.stderr.decode().strip()}")
+	
+	def main():
+	    console.print("[bold blue]Welcome to the dmarf2json installer![/bold blue]")
+	    console.print("[yellow]This script will install dmarf2json, a tool for creating a symbol table for custom Linux kernels.[/yellow]")
+	    install_dmarf2json()
+	
+	if __name__ == "__main__":
+	    main()
+	
+	
 
 Как использовать скрипт:
+
     Убедитесь, что у вас установлен Python и pip.
+
     Установите библиотеку rich, если она у вас не установлена:
-			bash:
-			pip install rich
+
+   	bash:
+	pip install rich
+	
 Скопируйте приведенный выше код в файл, например, install_dmarf2json.py.
 Запустите скрипт:
-			bash:
-			python install_dmarf2json.py
+
+	bash:
+ 	python install_dmarf2json.py
+
 Что делает скрипт:
-    Информирует пользователя о начале установки.
-    Выполняет команду установки dmarf2json.
-    Показывает прогресс установки.
-    Отображает сообщения об успехе или ошибках.
+
+  Информирует пользователя о начале установки.
+
+  Выполняет команду установки dmarf2json.
+
+  Показывает прогресс установки.
+
+  Отображает сообщения об успехе или ошибках.
 
 Этот скрипт поможет вам установить dmarf2json и получить информативный вывод в терминале.
 ___
 
 г) снимок Debug kernel для symbol table
 python:
-
-import subprocess
-import os
-import sys
-
-def install_dependencies():
-    try:
-        print("Установка необходимых зависимостей...")
-        subprocess.run(["sudo", "apt-get", "install", "-y", "linux-image-debug"], check=True)
-        print("Зависимости установлены.")
-    except subprocess.CalledProcessError as e:
-        print(f"Ошибка установки зависимостей: {e}")
-        sys.exit(1)
-
-def create_debug_snapshot():
-    try:
-        print("Создание снимка отладочного ядра...")
-        snapshot_command = "sudo cp /boot/vmlinuz-debug /boot/vmlinuz-debug.snapshot"
-        subprocess.run(snapshot_command, shell=True, check=True)
-        print("Снимок отладочного ядра создан.")
-    except subprocess.CalledProcessError as e:
-        print(f"Ошибка при создании снимка: {e}")
-        sys.exit(1)
-
-def main():
-    install_dependencies()
-    create_debug_snapshot()
-
-if __name__ == "__main__":
-    main()
-
-
-
+	
+	import subprocess
+	import os
+	import sys
+	
+	def install_dependencies():
+	    try:
+	        print("Установка необходимых зависимостей...")
+	        subprocess.run(["sudo", "apt-get", "install", "-y", "linux-image-debug"], check=True)
+	        print("Зависимости установлены.")
+	    except subprocess.CalledProcessError as e:
+	        print(f"Ошибка установки зависимостей: {e}")
+	        sys.exit(1)
+	
+	def create_debug_snapshot():
+	    try:
+	        print("Создание снимка отладочного ядра...")
+	        snapshot_command = "sudo cp /boot/vmlinuz-debug /boot/vmlinuz-debug.snapshot"
+	        subprocess.run(snapshot_command, shell=True, check=True)
+	        print("Снимок отладочного ядра создан.")
+	    except subprocess.CalledProcessError as e:
+	        print(f"Ошибка при создании снимка: {e}")
+	        sys.exit(1)
+	
+	def main():
+	    install_dependencies()
+	    create_debug_snapshot()
+	
+	if __name__ == "__main__":
+	    main()
+	
+	
+	
 Описание скрипта:
+
     Установка зависимостей:
-        Функция install_dependencies() устанавливает необходимые пакеты, такие как linux-image-debug.
+    Функция install_dependencies() устанавливает необходимые пакеты, такие как linux-image-debug.
+
     Создание снимка отладочного ядра:
-        Функция create_debug_snapshot() создает копию ядра для отладки.
+    Функция create_debug_snapshot() создает копию ядра для отладки.
+
     Главная функция:
-        main() вызывает функции установки и создания снимка.
+    
+	main() вызывает функции установки и создания снимка.
 
 Запуск скрипта
 Для запуска скрипта выполните команду в терминале:
-bash:
-python3 script_name.py
 
+ 	bash:
+	python3 script_name.py
+
+ 
 Замените script_name.py на имя вашего файла.
 Примечание:
-    Убедиться, что у есть права sudo для установки пакетов и создания снимков.
-    Скрипт подходит для систем на базе Debian/Ubuntu. Если использовать другую операционную систему, команды установки могут отличаться.
+   Убедиться, что у есть права sudo для установки пакетов и создания снимков.
+   Скрипт подходит для систем на базе Debian/Ubuntu. Если использовать другую операционную систему, команды установки могут отличаться.
 ___
 
