@@ -13,7 +13,7 @@ ___
     import requests
     import time
     
-    #Замените 'YOUR_API_KEY' на ваш ключ API от VirusTotal
+    # Замените 'YOUR_API_KEY' на ваш ключ API от VirusTotal
     
     API_KEY = 'YOUR_API_KEY'
     VT_URL = 'https://www.virustotal.com/vtapi/v2/url/report'
