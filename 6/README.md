@@ -54,6 +54,13 @@ ___
 
 - на Windows: устанавливаем программу Agent или по инструкции в PowerShell (запуск с правами администратора):
 
+
+    ш
+    
+
+    ip add
+    
+
 ![Снимок экрана 2025-01-21 163502](https://github.com/user-attachments/assets/3d973550-3f3b-4e9e-98a1-2bf7cc604822)
 
 
@@ -67,7 +74,13 @@ ___
 
  bash:
 
-    ip add
+
+        curl -o wazuh-agent-4.7.5-1.x86_64.rpm https://packages.wazuh.com/4.x/yum/wazuh-agent-4.7.5-1.x86_64.rpm && sudo WAZUH_MANAGER='192.168.189.132' WAZUH_AGENT_GROUP='default' rpm -ihv wazuh-agent-4.7.5-1.x86_64.rpm
+
+    
+        sudo systemctl daemon-reload
+        sudo systemctl enable wazuh-agent
+        sudo systemctl start wazuh-agent
     
 
 
