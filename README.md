@@ -7,7 +7,7 @@ Final project
 ---
 
 1
-(https://github.com/pash0283/tms_diplom_project/blob/main/1/README.md)
+<https://github.com/pash0283/tms_diplom_project/blob/main/1/README.md>
 
 2
 https://github.com/pash0283/tms_diplom_project/blob/main/2/README.md
