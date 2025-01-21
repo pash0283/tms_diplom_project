@@ -70,7 +70,7 @@ ___
 
 5a. Учтановка Wazuh Agent на Windows:
 
-- на Windows: устанавливаем программу Agent или по инструкции в PowerShell (запуск с правами администратора):
+- на Windows: устанавливаем программу Agent(с официального сайта [https://wazuh.com/downloads/]) или по инструкции в PowerShell (запуск с правами администратора):
 
     
         Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.7.5-1.msi -OutFile ${env.tmp}\wazuh-agent; msiexec.exe /i ${env.tmp}\wazuh-agent /q WAZUH_MANAGER='192.168.189.132' WAZUH_AGENT_GROUP='default' WAZUH_REGISTRATION_SERVER='192.168.189.132'
