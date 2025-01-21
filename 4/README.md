@@ -20,6 +20,7 @@ CVE-2021-41773 — это уязвимость в Apache HTTP Server, позво
 
  Проверьте версию Apache HTTP Server:
  Выполните команду:
+
  bash:
 
         apache2 -v
@@ -30,6 +31,7 @@ CVE-2021-41773 — это уязвимость в Apache HTTP Server, позво
 
  Сделайте резервную копию конфигурации:
  Сохраните копии текущих конфигурационных файлов:
+
  bash:
 
         cp -r /etc/httpd/conf /etc/httpd/conf.bak
@@ -37,12 +39,14 @@ CVE-2021-41773 — это уязвимость в Apache HTTP Server, позво
 Обновите Apache:
 
  Для Ubuntu/Debian:
+
  bash:
 
         sudo apt update
         sudo apt upgrade apache2
         
  Для CentOS/RHEL:
+
  bash:
 
         sudo yum update httpd
@@ -50,6 +54,7 @@ CVE-2021-41773 — это уязвимость в Apache HTTP Server, позво
 3. Перезапуск службы
 
  Перезапустите Apache:
+
  bash:
 
         sudo systemctl restart apache2  # для Ubuntu/Debian
@@ -60,6 +65,7 @@ CVE-2021-41773 — это уязвимость в Apache HTTP Server, позво
  Проверьте версию после обновления:
 
  Выполните команду:
+
  bash:
 
         apache2 -v
@@ -71,6 +77,7 @@ CVE-2021-41773 — это уязвимость в Apache HTTP Server, позво
  Проверьте логи на наличие подозрительной активности:
 
  Просматривайте журналы доступа и ошибок:
+
  bash:
 
         tail -f /var/log/apache2/access.log
