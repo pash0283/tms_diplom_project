@@ -220,7 +220,8 @@ ___
 bash:
 
 	/var/ossec/bin/agent_control -l
-	
+
+Dashboard (пример):
 ![dashboard](https://github.com/user-attachments/assets/1d18973f-07f0-4e74-8fa9-956a6ae84760)
 ___
 11. Настройка правил в Wazuh:
