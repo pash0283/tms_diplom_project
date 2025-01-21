@@ -50,7 +50,19 @@ ___
 ![Снимок экрана 2025-01-21 160700](https://github.com/user-attachments/assets/09548e2c-9e47-4682-8f64-8696b237c00d)
 
 
-5a. Учтановка Wazuh Agent на Linux:
+5a. Установка Wazuh Agent на Linux:
+
+Если агент еще не установлен, выполните следующие шаги:
+bash:
+
+	# Для Debian/Ubuntu
+	curl -s https://packages.wazuh.com/4.x/apt/doc/install.sh | bash
+	apt-get install wazuh-agent
+
+	# Для CentOS/RHEL
+	curl -s https://packages.wazuh.com/4.x/yum/doc/install.sh | bash
+	yum install wazuh-agent
+
 
 На хосте добавляем себя как агента, deploy new agent:
 
@@ -87,6 +99,24 @@ ___
 
 6. Настройка Wazuh Agent(Linux):
 
+Отредактируйте конфигурационный файл агента, bash:
+
+	nano /var/ossec/etc/ossec.conf
+
+
+Добавьте параметры для syslog и auditd:
+
+	xml
+	<localfile>
+	  <log_format>syslog</log_format>
+	  <location>/var/log/syslog</location>
+	</localfile>
+	
+	<localfile>
+	  <log_format>auditd</log_format>
+	  <location>/var/log/audit/audit.log</location>
+	</localfile>
+	
 
 6a. Настройка Wazuh Agent(Windows):
 
@@ -112,15 +142,15 @@ ___
 Добавьте или измените настройки для отправки логов Windows:
 
         xml
-	 <localfile>
-	    <location>EventChannel://Security</location>
-	</localfile>
-	<localfile>
-	    <location>EventChannel://System</location>
-	</localfile>
-	<localfile>
-	    <location>EventChannel://Application</location>
-	</localfile>
+		 <localfile>
+		    <location>EventChannel://Security</location>
+		</localfile>
+		<localfile>
+		    <location>EventChannel://System</location>
+		</localfile>
+		<localfile>
+		    <location>EventChannel://Application</location>
+		</localfile>
 
 
 7. Настройка отправки логов:
