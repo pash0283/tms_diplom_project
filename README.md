@@ -28,3 +28,6 @@ https://github.com/pash0283/tms_diplom_project/blob/main/6/README.md
 
 ![cyb](https://github.com/user-attachments/assets/015a7dd7-bdf9-4e87-800a-ca9cb13138e3)
 
+Резюме   https://www.canva.com/design/DAGcb3WOeRo/SioIFJrDfmf9ZAlMxFCmAA/edit
+
+![sh](https://github.com/user-attachments/assets/18071707-6d6b-4996-a5ca-c80639717c92)
