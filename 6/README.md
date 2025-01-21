@@ -67,16 +67,13 @@ ___
 
 
 
-- на Linux по инструкции вводим:
-
- bash:
-
-        curl -o wazuh-agent-4.7.5-1.x86_64.rpm https://packages.wazuh.com/4.x/yum/wazuh-agent-4.7.5-1.x86_64.rpm && sudo WAZUH_MANAGER='192.168.189.132' WAZUH_AGENT_GROUP='default' rpm -ihv wazuh-agent-4.7.5-1.x86_64.rpm
+- на Linux по инструкции вводим,   bash:
 
     
         sudo systemctl daemon-reload
         sudo systemctl enable wazuh-agent
         sudo systemctl start wazuh-agent
+          
     
 
 ![Снимок экрана 2025-01-21 163644](https://github.com/user-attachments/assets/dcdd82d9-b551-4caf-bbdb-792485afc297)
