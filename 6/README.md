@@ -56,12 +56,12 @@ ___
 
 bash:
 
- # Для Debian/Ubuntu
+ Для Debian/Ubuntu
 
  	curl -s https://packages.wazuh.com/4.x/apt/doc/install.sh | bash
 	apt-get install wazuh-agent
 
- # Для CentOS/RHEL
+ Для CentOS/RHEL
 
  	curl -s https://packages.wazuh.com/4.x/yum/doc/install.sh | bash
 	yum install wazuh-agent
