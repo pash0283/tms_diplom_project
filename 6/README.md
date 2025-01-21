@@ -53,14 +53,17 @@ ___
 5a. Установка Wazuh Agent на Linux:
 
 Если агент еще не установлен, выполните следующие шаги:
+
 bash:
 
 	# Для Debian/Ubuntu
-	curl -s https://packages.wazuh.com/4.x/apt/doc/install.sh | bash
+
+ 	curl -s https://packages.wazuh.com/4.x/apt/doc/install.sh | bash
 	apt-get install wazuh-agent
 
 	# Для CentOS/RHEL
-	curl -s https://packages.wazuh.com/4.x/yum/doc/install.sh | bash
+
+ 	curl -s https://packages.wazuh.com/4.x/yum/doc/install.sh | bash
 	yum install wazuh-agent
 
 
