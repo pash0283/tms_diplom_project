@@ -48,6 +48,7 @@ ___
 - пароль: admin
 
 ![Снимок экрана 2025-01-21 160700](https://github.com/user-attachments/assets/09548e2c-9e47-4682-8f64-8696b237c00d)
+![4](https://github.com/user-attachments/assets/ebfd3055-5d25-4d49-923b-bc34f17783a0)
 
 
 5a. Установка Wazuh Agent на Linux:
