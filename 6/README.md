@@ -17,7 +17,7 @@ ___
 
 2. Настройка сети: вместо Bridge -> нужно NAT
 
-    ip add
+        ip add
     
 
 узнаем IP, в моем случае 192.168.189.132
@@ -25,19 +25,23 @@ ___
 
 3. Вход на сервер и его включениие:
 
+        sudo -i
 
-    ip add
-    sudo -i
-    systemctl start wazuh-manager
-    systemctl enable wazuh-indexer
-    systemctl start wazuh-indexer
-    systemctl deamon -reload
-    systemctl enable wazuh-dashboard
-    systemctl start wazuh-dashboard
-    systemctl status
-   
-   
-  
+        systemctl start wazuh-manager
+
+        systemctl enable wazuh-indexer
+
+        systemctl start wazuh-indexer
+
+        systemctl deamon -reload
+
+        systemctl enable wazuh-dashboard
+
+        systemctl start wazuh-dashboard
+
+        systemctl status
+       
+     
 5. Соединение агентов:
 
 входим http://192.168.189.132/
