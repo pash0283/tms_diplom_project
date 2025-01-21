@@ -23,3 +23,6 @@ https://github.com/pash0283/tms_diplom_project/blob/main/5/README.md
 
 6
 https://github.com/pash0283/tms_diplom_project/blob/main/6/README.md
+
+![cyb](https://github.com/user-attachments/assets/015a7dd7-bdf9-4e87-800a-ca9cb13138e3)
+
