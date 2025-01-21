@@ -166,8 +166,9 @@ ___
 	  <port>1514</port>
 	</server>
 
-![7++](https://github.com/user-attachments/assets/b437553a-6552-4180-8c79-e95f11dc6e8e)
-![7+](https://github.com/user-attachments/assets/6e9524b1-263a-4cd9-aaa4-8f4aee26b214)
+![7++](https://github.com/user-attachments/assets/a5711906-bed5-475d-97cd-b03b1a3c0f22)
+![7+](https://github.com/user-attachments/assets/be70e5dd-3395-498b-a4bb-f5ccc486eecc)
+
 ___
 8. Перезапуск Wazuh Agent:
 
@@ -211,7 +212,8 @@ bash:
 
 	systemctl start auditd
 	systemctl enable auditd
-![auditd](https://github.com/user-attachments/assets/dc4b4bc2-3522-4e06-952e-3e2156bc0b6f)
+
+![auditd](https://github.com/user-attachments/assets/c40075fe-5738-4d8e-a646-0b2a15947bd2)
 
 ___
 10. Проверка состояния:
@@ -222,11 +224,14 @@ bash:
 	/var/ossec/bin/agent_control -l
 
 Dashboard (пример):
+
 ![dashboard](https://github.com/user-attachments/assets/1d18973f-07f0-4e74-8fa9-956a6ae84760)
+
 ___
 11. Настройка правил в Wazuh:
 
 В Wazuh Manager можно дополнительно настроить правила для обработки логов syslog и auditd, если необходимо.
+
 ![rules](https://github.com/user-attachments/assets/e73a6306-584b-4a9d-b6cd-c9883f473b03)
 
 После настройки, вы сможете видеть логи Windows в интерфейсе Wazuh. Проверьте, что данные поступают корректно, и настроены необходимые правила для их обработки.
