@@ -41,13 +41,16 @@ ___
         systemctl status
        
      
-5. Установка Wazuh Agent:
+4. Установка Wazuh Agent:
 
 входим "http://192.168.189.132/"
 - логин: admin
 - пароль: admin
 
 ![Снимок экрана 2025-01-21 160700](https://github.com/user-attachments/assets/09548e2c-9e47-4682-8f64-8696b237c00d)
+
+
+5a. Учтановка Wazuh Agent на Linux:
 
 На хосте добавляем себя как агента, deploy new agent:
 
@@ -62,11 +65,11 @@ ___
         sudo systemctl start wazuh-agent
           
     
-
 ![Снимок экрана 2025-01-21 163644](https://github.com/user-attachments/assets/dcdd82d9-b551-4caf-bbdb-792485afc297)
 
 
 5a. Учтановка Wazuh Agent на Windows:
+
 - на Windows: устанавливаем программу Agent или по инструкции в PowerShell (запуск с правами администратора):
 
     
