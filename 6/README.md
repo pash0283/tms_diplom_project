@@ -70,7 +70,7 @@ ___
 
 5a. Учтановка Wazuh Agent на Windows:
 
-- на Windows: устанавливаем программу Agent(с официального сайта [https://wazuh.com/downloads/]) или по инструкции в PowerShell (запуск с правами администратора):
+- на Windows: устанавливаем программу Agent (с официального сайта https://wazuh.com/downloads/) или по инструкции в PowerShell (запуск с правами администратора):
 
     
         Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.7.5-1.msi -OutFile ${env.tmp}\wazuh-agent; msiexec.exe /i ${env.tmp}\wazuh-agent /q WAZUH_MANAGER='192.168.189.132' WAZUH_AGENT_GROUP='default' WAZUH_REGISTRATION_SERVER='192.168.189.132'
@@ -90,6 +90,38 @@ ___
 
 6a. Настройка Wazuh Agent(Windows):
 
+Отредактируйте конфигурационный файл:
+
+Откройте файл конфигурации ossec.conf, который находится в директории установки агента (обычно C:\Program Files (x86)\ossec-agent\ossec.conf).
+
+Пример настройки для подключения к Wazuh Manager:
+
+        xml
+          <ossec_config>
+            <global>
+                <agent>
+                    <name>Windows-Agent</name>
+                    <ip>IP_вашего_Wazuh_Manager</ip>
+                </agent>
+            </global>
+            ...
+        </ossec_config>
+
+
+- Настройка логирования:
+Добавьте или измените настройки для отправки логов Windows:
+
+        xml
+	 <localfile>
+	    <location>EventChannel://Security</location>
+	</localfile>
+	<localfile>
+	    <location>EventChannel://System</location>
+	</localfile>
+	<localfile>
+	    <location>EventChannel://Application</location>
+	</localfile>
+
 
 7. Настройка отправки логов:
 
@@ -108,33 +140,7 @@ ___
 Перейдите на официальный сайт Wazuh и скачайте последнюю версию агента для Windows.
 2.	Установите Wazuh Agent:
 Запустите установщик и следуйте инструкциям на экране.
-2. Настройка Wazuh Agent
-1.	Отредактируйте конфигурационный файл:
-Откройте файл конфигурации ossec.conf, который находится в директории установки агента (обычно C:\Program Files (x86)\ossec-agent\ossec.conf).
-Пример настройки для подключения к Wazuh Manager:
-xml
-•  <ossec_config>
-    <global>
-        <agent>
-            <name>Windows-Agent</name>
-            <ip>IP_вашего_Wazuh_Manager</ip>
-        </agent>
-    </global>
-    ...
-</ossec_config>
-•  Настройка логирования:
-Добавьте или измените настройки для отправки логов Windows:
-xml
-2.	<localfile>
-3.	    <location>EventChannel://Security</location>
-4.	</localfile>
-5.	<localfile>
-6.	    <location>EventChannel://System</location>
-7.	</localfile>
-8.	<localfile>
-9.	    <location>EventChannel://Application</location>
-10.	</localfile>
-11.	
+2. 
 3. Запуск и проверка агента
 1.	Запустите Wazuh Agent:
 После внесения изменений, перезапустите службу Wazuh Agent через Панель управления или с помощью командной строки:
