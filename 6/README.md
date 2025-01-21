@@ -96,9 +96,7 @@ bash:
 
 
 ![Снимок экрана 2025-01-21 163502](https://github.com/user-attachments/assets/3d973550-3f3b-4e9e-98a1-2bf7cc604822)
-
-
-
+___
 6. Настройка Wazuh Agent(Linux):
 
 Отредактируйте конфигурационный файл агента, bash:
@@ -156,8 +154,7 @@ bash:
 		</localfile>
 
 ![6](https://github.com/user-attachments/assets/4941029f-bd77-481d-8af4-9cb17b2a5cf6)
-
-
+___
 7. Настройка отправки логов:
 
 Убедитесь, что Wazuh Agent настроен для отправки логов на сервер Wazuh:
@@ -169,11 +166,52 @@ bash:
 	  <port>1514</port>
 	</server>
 
-
+![7++](https://github.com/user-attachments/assets/b437553a-6552-4180-8c79-e95f11dc6e8e)
+![7+](https://github.com/user-attachments/assets/6e9524b1-263a-4cd9-aaa4-8f4aee26b214)
+___
 8. Перезапуск Wazuh Agent:
 
+После внесения изменений перезапустите агент, bash:
+
+Для Debian/Ubuntu
+
+	systemctl restart wazuh-agent
+	
+
+Для CentOS/RHEL
+
+	systemctl restart wazuh-agent
+	
+
+Перезапустить службу Wazuh Agent с помощью командной строки:
+
+	net start wazuh-agent
+
+
+Проверьте статус:
+Убедитесь, что агент успешно подключен к Wazuh Manager, bash:
+
+	wazuh-logtest
+
+
+___
 9. Настройка auditd(если надо):
 
+Если auditd не установлен, его можно установить и настроить, bash:
+ Установка auditd
+
+	apt-get install auditd  # Для Debian/Ubuntu
+	yum install audit  # Для CentOS/RHEL
+	
+
+Отредактировать конфигурацию auditd, если необходимо, и убедитесь, что он запущен, 
+bash:
+
+	systemctl start auditd
+	systemctl enable auditd
+
+
+___
 10. Проверка состояния:
 
 11. Настройка правил в Wazuh:
@@ -183,14 +221,6 @@ bash:
 
 3. Запуск и проверка агента
 1.	Запустите Wazuh Agent:
-После внесения изменений, перезапустите службу Wazuh Agent через Панель управления или с помощью командной строки:
-bash
-•  net start wazuh-agent
-•  Проверьте статус:
-Убедитесь, что агент успешно подключен к Wazuh Manager, bash:
-
-	wazuh-logtest
-
 
 4.	
 5. Настройка Wazuh Manager
