@@ -197,8 +197,10 @@ ___
 ___
 9. Настройка auditd(если надо):
 
-Если auditd не установлен, его можно установить и настроить, bash:
- Установка auditd
+Если auditd не установлен, его можно установить и настроить, 
+bash:
+
+Установка auditd
 
 	apt-get install auditd  # Для Debian/Ubuntu
 	yum install audit  # Для CentOS/RHEL
@@ -209,36 +211,29 @@ bash:
 
 	systemctl start auditd
 	systemctl enable auditd
-
+![auditd](https://github.com/user-attachments/assets/dc4b4bc2-3522-4e06-952e-3e2156bc0b6f)
 
 ___
 10. Проверка состояния:
 
+Убедитесь, что агент работает и передает логи на Wazuh Manager, 
+bash:
+
+	/var/ossec/bin/agent_control -l
+	
+![dashboard](https://github.com/user-attachments/assets/1d18973f-07f0-4e74-8fa9-956a6ae84760)
+___
 11. Настройка правил в Wazuh:
 
-Заключение:
+В Wazuh Manager можно дополнительно настроить правила для обработки логов syslog и auditd, если необходимо.
+![rules](https://github.com/user-attachments/assets/e73a6306-584b-4a9d-b6cd-c9883f473b03)
 
-
-3. Запуск и проверка агента
-1.	Запустите Wazuh Agent:
-
-4.	
-5. Настройка Wazuh Manager
-1.	Добавьте нового агента:
-Откройте файл ossec.conf на Wazuh Manager и добавьте новую секцию агента:
-xml
-1.	<agent>
-2.	    <name>Windows-Agent</name>
-3.	    <ip>IP_вашего_Windows_Agent</ip>
-4.	</agent>
-5.	
-6.	Перезапустите Wazuh Manager:
-После внесения изменений, перезапустите службу Wazuh Manager.
-5. Проверка логов
 После настройки, вы сможете видеть логи Windows в интерфейсе Wazuh. Проверьте, что данные поступают корректно, и настроены необходимые правила для их обработки.
-
+___
 Заключение:
 
-Теперь вы успешно настроили логирование и отправку логов Windows в Wazuh. Если возникнут проблемы, проверьте логи агента и Wazuh Manager для получения дополнительной информации о возможных ошибках.
+Теперь Wazuh должен успешно собирать логи из syslog и auditd на вашем Linux-сервере. Убедиться, что логи Wazuh проверяются для диагностики и мониторинга.
 
+Логирование и отправка логов Windows в Wazuh настроено. Если возникнут проблемы, проверить логи агента и Wazuh Manager для получения дополнительной информации о возможных ошибках.
+___
 
