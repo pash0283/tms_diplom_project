@@ -11,9 +11,9 @@ ___
 - логин: wazuh-user
 - пароль: wazuh
 
-![Снимок экрана 2025-01-21 122112](https://github.com/user-attachments/assets/cb2f90c3-0770-42f3-ae67-98fbb11ce642)
+![1](https://github.com/user-attachments/assets/24889b66-45ef-435c-b558-db35f0cfa52a)
 
-
+___
 2. Настройка сети: вместо Bridge -> нужно NAT
 
         ip add
@@ -21,7 +21,7 @@ ___
 
 узнаем IP, в моем случае 192.168.189.132
 
-
+___
 3. Вход на сервер и его включениие:
 
         sudo -i
@@ -40,17 +40,16 @@ ___
 
         systemctl status
        
-     
+___     
 4. Установка Wazuh Agent:
 
 входим "http://192.168.189.132/"
 - логин: admin
 - пароль: admin
 
-![Снимок экрана 2025-01-21 160700](https://github.com/user-attachments/assets/09548e2c-9e47-4682-8f64-8696b237c00d)
+![2](https://github.com/user-attachments/assets/e42fb17b-0720-49e7-9529-61b8ab99b387)
 ![4](https://github.com/user-attachments/assets/ebfd3055-5d25-4d49-923b-bc34f17783a0)
-
-
+___
 5a. Установка Wazuh Agent на Linux:
 
 Если агент еще не установлен, выполните следующие шаги:
@@ -95,7 +94,6 @@ bash:
     
         NET START WazuhSvc
 
- 
 
 ![Снимок экрана 2025-01-21 163502](https://github.com/user-attachments/assets/3d973550-3f3b-4e9e-98a1-2bf7cc604822)
 
