@@ -50,11 +50,20 @@ ___
 
 ![Снимок экрана 2025-01-21 160700](https://github.com/user-attachments/assets/09548e2c-9e47-4682-8f64-8696b237c00d)
 
+На хосте добавляем себя как агента, deploy new agent:
+
 - на Windows: устанавливаем программу Agent или по инструкции в PowerShell (запуск с правами администратора):
+
+![Снимок экрана 2025-01-21 163502](https://github.com/user-attachments/assets/3d973550-3f3b-4e9e-98a1-2bf7cc604822)
 
 
 
 - на Linux по инструкции вводим:
+
+![Снимок экрана 2025-01-21 163644](https://github.com/user-attachments/assets/dcdd82d9-b551-4caf-bbdb-792485afc297)
+
+
+
 
  bash:
 
