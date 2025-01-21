@@ -19,9 +19,9 @@ CVE-2021-41773 — это уязвимость в Apache HTTP Server, позво
 1. Подтверждение уязвимости
 
  Проверьте версию Apache HTTP Server:
-        Выполните команду:
+ Выполните команду:
+ bash:
 
-        bash:
         apache2 -v
         
  Убедитесь, что версия Apache ниже 2.4.49.
@@ -30,28 +30,28 @@ CVE-2021-41773 — это уязвимость в Apache HTTP Server, позво
 
  Сделайте резервную копию конфигурации:
  Сохраните копии текущих конфигурационных файлов:
+ bash:
 
-        bash:
         cp -r /etc/httpd/conf /etc/httpd/conf.bak
         
 Обновите Apache:
 
-Для Ubuntu/Debian:
+ Для Ubuntu/Debian:
+ bash:
 
-        bash:
         sudo apt update
         sudo apt upgrade apache2
         
-Для CentOS/RHEL:
+ Для CentOS/RHEL:
+ bash:
 
-        bash:
         sudo yum update httpd
         
 3. Перезапуск службы
 
  Перезапустите Apache:
+ bash:
 
-        bash:
         sudo systemctl restart apache2  # для Ubuntu/Debian
         sudo systemctl restart httpd    # для CentOS/RHEL
         
@@ -60,8 +60,8 @@ CVE-2021-41773 — это уязвимость в Apache HTTP Server, позво
  Проверьте версию после обновления:
 
  Выполните команду:
+ bash:
 
-        bash:
         apache2 -v
         
 Убедитесь, что версия обновлена на 2.4.49 или выше.
@@ -71,8 +71,8 @@ CVE-2021-41773 — это уязвимость в Apache HTTP Server, позво
  Проверьте логи на наличие подозрительной активности:
 
  Просматривайте журналы доступа и ошибок:
+ bash:
 
-        bash:
         tail -f /var/log/apache2/access.log
         tail -f /var/log/apache2/error.log
         
@@ -83,10 +83,8 @@ CVE-2021-41773 — это уязвимость в Apache HTTP Server, позво
  Укажите дату, выполненные действия, результаты проверки и любые изменения в конфигурации.
 
  Ответственные лица
-        
-         Специалист SOC L1: [Имя и контактные данные]
-        
-         Ответственный администратор сервера: [Имя и контактные данные]
+ - Специалист SOC L1: [Имя и контактные данные]
+ - Ответственный администратор сервера: [Имя и контактные данные]
         
 Примечания
 
