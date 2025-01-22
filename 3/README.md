@@ -8,7 +8,7 @@ ___
 
 Для автоматизации проверки URL через VirusTotal вам потребуется использовать их API. Вот пример скрипта на Python, который выполняет эту задачу:
 
-# python:
+python:
   
     import requests
     import time
