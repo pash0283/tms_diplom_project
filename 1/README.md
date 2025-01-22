@@ -2,7 +2,7 @@
 
 Расследование инцидентов   ( 24 вопроса-ответа )
 
-Изучить логи и примеры инцидентов, дать подробные ответы на данные вопросы: soc_practical_test
+Изучить логи и примеры инцидентов, дать подробные ответы на данные вопросы: soc_practical
 (teacher: Aleksey Smirnov)
 
 ___
@@ -540,18 +540,19 @@ JgBjAGgAYwBwAC4AYwBvAG0AIAA2ADUAMAAwADEAIAA+ACAAJABuAHUAbABsAAoAJABlAHgAZQBjAF8A
 Что скрыто в этом коде? Он подозрительный?
 
 Похоже, строка, закодирована в base64, которая обычно используется для кодирования двоичных данных в текст ASCII для безопасной передачи по текстовым протоколам. Декодирование этой строки Base64 раскроет ее исходное содержимое. Для декодирования строки Base64 вы можете использовать различные онлайн-инструменты или языки программирования, например 
+
 Python:
 
-			import base64
-			# Base64 encoded string
+	import base64
+	# Base64 encoded string
 
-			encoded_string = "JgBjAGgAYwBwAC4AYwBvAG0AIAA2ADUAMAAwADEAIAA+ACAAJABuAHUAbABsAAoAJABlAHgAZQBjAF8AdwByAGEAcABwAGUAcgBfAHMAdAByACAAPQAgACQAaQBuAHAAdQB0ACAAfAAgAE8AdQB0AC0AUwB0AHIAaQBuAGcACgAkAHMAcABsAGkAdABfAHAAYQByAHQAcwAgAD0AIAAkAGUAeABlAGMAXwB3AHIAYQBwAHAAZQByAF8AcwB0AHIALgBTAHAAbABpAHQAKABAACgAIgBgADAAYAAwAGAAMABgADAAIgApACwAIAAyACwAIABbAFMAdAByAGkAbgBFAG0AcAB0AFcAIAAkAHMAcABsAGkAdABfAHAAYQByAHQAcwBbADEAXQAKACQAZQB4AGUAYwBfAHcAcgBhAHAAcABlAHIAIAA9ACAAWwBTAGMAcgBpAHAAdABCAGwAbwBjAGsAXQA6ADoAQwByAGUAYQB0AGUAKAAkAHMAcABsAGkAdABfAHAAYQByAHQAcwBbADAAXQApAAoAJgAkAGUAeABlAGMAXwB3AHIAYQBwAHAAZQ=="
+	encoded_string = "JgBjAGgAYwBwAC4AYwBvAG0AIAA2ADUAMAAwADEAIAA+ACAAJABuAHUAbABsAAoAJABlAHgAZQBjAF8AdwByAGEAcABwAGUAcgBfAHMAdAByACAAPQAgACQAaQBuAHAAdQB0ACAAfAAgAE8AdQB0AC0AUwB0AHIAaQBuAGcACgAkAHMAcABsAGkAdABfAHAAYQByAHQAcwAgAD0AIAAkAGUAeABlAGMAXwB3AHIAYQBwAHAAZQByAF8AcwB0AHIALgBTAHAAbABpAHQAKABAACgAIgBgADAAYAAwAGAAMABgADAAIgApACwAIAAyACwAIABbAFMAdAByAGkAbgBFAG0AcAB0AFcAIAAkAHMAcABsAGkAdABfAHAAYQByAHQAcwBbADEAXQAKACQAZQB4AGUAYwBfAHcAcgBhAHAAcABlAHIAIAA9ACAAWwBTAGMAcgBpAHAAdABCAGwAbwBjAGsAXQA6ADoAQwByAGUAYQB0AGUAKAAkAHMAcABsAGkAdABfAHAAYQByAHQAcwBbADAAXQApAAoAJgAkAGUAeABlAGMAXwB3AHIAYQBwAHAAZQ=="
 
-			# Decoding the Base64 string
-			decoded_bytes = base64.b64decode(encoded_string)
-			decoded_string = decoded_bytes.decode('utf-8', errors='ignore')
+	# Decoding the Base64 string
+	decoded_bytes = base64.b64decode(encoded_string)
+	decoded_string = decoded_bytes.decode('utf-8', errors='ignore')
 
-			print(decoded_string)
+	print(decoded_string)
 
 
 Вот раскодированное содержимое:
