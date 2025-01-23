@@ -7,7 +7,7 @@ Final project
 ---
 
 1
-[<img alt="Расследование инцидентов" width="40" height="40">](https://github.com/pash0283/tms_diplom_project/blob/main/1/README.md)
+["Расследование инцидентов"](https://github.com/pash0283/tms_diplom_project/blob/main/1/README.md)
 
 2 
 [<img alt="Скрипт" width="40" height="40">](https://github.com/pash0283/tms_diplom_project/blob/main/2/README.md)
