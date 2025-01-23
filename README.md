@@ -10,22 +10,22 @@ Final project
 ["Расследование инцидентов"](https://github.com/pash0283/tms_diplom_project/blob/main/1/README.md)
 
 2 
-[<img alt="Скрипт" width="40" height="40">](https://github.com/pash0283/tms_diplom_project/blob/main/2/README.md)
+["Скрипт"](https://github.com/pash0283/tms_diplom_project/blob/main/2/README.md)
 
 3 
-[<img alt="Virustotal" width="40" height="40">](https://github.com/pash0283/tms_diplom_project/blob/main/3/README.md)
+["Virustotal"](https://github.com/pash0283/tms_diplom_project/blob/main/3/README.md)
 
 
 4 
-[<img alt="Уязвимость" width="40" height="40">](https://github.com/pash0283/tms_diplom_project/blob/main/4/README.md)
+["Уязвимость"](https://github.com/pash0283/tms_diplom_project/blob/main/4/README.md)
 
 
 5 
-[<img alt="Фишинг" width="40" height="40">](https://github.com/pash0283/tms_diplom_project/blob/main/5/README.md)
+["Фишинг"](https://github.com/pash0283/tms_diplom_project/blob/main/5/README.md)
 
 
 6 
-[<img alt="Wazuh" width="40" height="40">](https://github.com/pash0283/tms_diplom_project/blob/main/6/README.md)
+["Wazuh"](https://github.com/pash0283/tms_diplom_project/blob/main/6/README.md)
 
 
 (выполненные домашние задания https://drive.google.com/drive/folders/1O4an2aTIXPbY2_olSjsi7HrrcKJyKNRN)
